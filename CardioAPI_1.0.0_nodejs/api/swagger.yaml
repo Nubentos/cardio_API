@@ -1,0 +1,118 @@
+---
+swagger: "2.0"
+info:
+  description: "Cardio API is a risk calculator API intended to help users find an\
+    \ estimate for their cardiovascular risk according to the 2013 ACC/AHA Guideline\
+    \ on the Assessment of Cardiovascular Risk and the 2013 ACC/AHA Guideline on the\
+    \ Treatment of Blood Cholesterol to Reduce Atherosclerotic Cardiovascular Risk\
+    \ in Adults.\n"
+  version: "1.0.0"
+  title: "CARDIOAPI"
+  license:
+    name: "Apache 2.0"
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+host: "apigw.nubentos.com"
+basePath: "/t/nubentos.com/cardioapi/0.0.0"
+schemes:
+- "https"
+paths:
+  /ascvd:
+    get:
+      summary: "Risk of atherosclerotic cardiovascular disease."
+      operationId: "ascvdGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "age"
+        in: "query"
+        description: "Current Age, enter a value between 20-79 years"
+        required: true
+        type: "integer"
+        maximum: 79
+        minimum: 20
+      - name: "gender"
+        in: "query"
+        description: "Gender:\n * male.\n * female.\n"
+        required: true
+        type: "string"
+        enum:
+        - "male"
+        - "female"
+      - name: "systolic"
+        in: "query"
+        description: "Systolic Blood Pressure (mm Hg) : Value must be between 90-200"
+        required: true
+        type: "integer"
+        maximum: 200
+        minimum: 90
+      - name: "total_cholesterol"
+        in: "query"
+        description: "Total Cholesterol (mmol/L) : Value must be between 130 - 320"
+        required: true
+        type: "string"
+        maximum: 320
+        minimum: 130
+      - name: "hdl"
+        in: "query"
+        description: "HDL Cholesterol (mmol/L) : Value must be between 20 - 100"
+        required: true
+        type: "integer"
+        maximum: 100
+        minimum: 20
+      - name: "diabetic"
+        in: "query"
+        description: "History of Diabetes? : True | False"
+        required: false
+        type: "boolean"
+      - name: "smoker"
+        in: "query"
+        description: "Smoker?\n * True: Smokes every day.\n* False: Never, ocasionally\
+          \ and/or has been asbstinents for at least 7 days in a row.\n"
+        required: false
+        type: "boolean"
+      - name: "hypertensive"
+        in: "query"
+        description: "On Hypertension Treatment? \n * True \n * False"
+        required: false
+        type: "boolean"
+      - name: "race"
+        in: "query"
+        description: "Race\n * White (white)\n *  African American (aa)"
+        required: false
+        type: "string"
+        enum:
+        - "white"
+        - "aa"
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/resultIrc"
+        400:
+          description: "Validation exception."
+        404:
+          description: "No results for the given source."
+      x-swagger-router-controller: "Default"
+      x-auth-type: "Application & Application User"
+      x-throttling-tier: "Unlimited"
+definitions:
+  resultIrc:
+    required:
+    - "compute_lifetime_risk"
+    - "compute_optimal_lifetime"
+    - "compute_ten_year_risk_reduction"
+    - "compute_ten_year_score"
+    properties:
+      compute_ten_year_score:
+        type: "number"
+      compute_lifetime_risk:
+        type: "number"
+      compute_optimal_lifetime:
+        type: "number"
+      compute_ten_year_risk_reduction:
+        type: "number"
+    example:
+      compute_lifetime_risk: 27
+      compute_optimal_lifetime: 8
+      compute_ten_year_risk_reduction: 0.9
+      compute_ten_year_score: 1.7
