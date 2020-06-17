@@ -2,7 +2,7 @@
 ## SDK and Postman Collection for Nubentos Cardio API
 This a collection of client SDKs and Postman Collection to use an integrate the Nubentos [Cardio API](https://apimarket.nubentos.com/store/apis/info?name=CardioAPI&version=1.0.0&provider=owner-AT-nubentos.com&tenant=nubentos.com&utm_source=postman&utm_medium=documentacion&utm_campaign=workflow&utm_content=doc)  in your applications.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/99c24d9597df2816e4c2)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/99c24d9597df2816e4c2)
 
 We covered in this repository the next list of resources.
 
