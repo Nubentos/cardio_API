@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "08e10fbf-42a5-45a8-b4ae-8a72505af0b9",
+		"name": "Cardio_API",
+		"description": "The API CARDIOAPI is a  risk calculator API intended to help users find an estimate for their cardiovascular risk according to the 2013 ACC/AHA Guideline on the Assessment of Cardiovascular Risk and the 2013 ACC/AHA Guideline on the Treatment of Blood Cholesterol to Reduce Atherosclerotic Cardiovascular Risk in Adults.  \n\nThe 10-year risk for ASCVD is categorized as:\n* Low-risk (<5%)\n* Borderline risk (5% to 7.4%)\n* Intermediate risk (7.5% to 19.9%)\n* High risk (≥20%)\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Risk of atherosclerotic cardiovascular disease.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/ascvd?age={{age}}&gender={{gender}}&systolic={{systolic}}&total_cholesterol={{total_cholesterol}}&hdl={{hdl}}&diabetic={{diabetic}}&smoker={{smoke}}&hypertensive={{hypertensive}}&race={{race}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"ascvd"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "{{age}}",
+							"description": "(Required) Current Age, enter a value between 20-79 years"
+						},
+						{
+							"key": "gender",
+							"value": "{{gender}}",
+							"description": "(Required) Gender:\n * male.\n * female.\n"
+						},
+						{
+							"key": "systolic",
+							"value": "{{systolic}}",
+							"description": "(Required) Systolic Blood Pressure (mm Hg) : Value must be between 90-200"
+						},
+						{
+							"key": "total_cholesterol",
+							"value": "{{total_cholesterol}}",
+							"description": "(Required) Total Cholesterol (mmol/L) : Value must be between 130 - 320"
+						},
+						{
+							"key": "hdl",
+							"value": "{{hdl}}",
+							"description": "(Required) HDL Cholesterol (mmol/L) : Value must be between 20 - 100"
+						},
+						{
+							"key": "diabetic",
+							"value": "{{diabetic}}",
+							"description": "History of Diabetes? : True | False"
+						},
+						{
+							"key": "smoker",
+							"value": "{{smoke}}",
+							"description": "Smoker?\n* True :Smokes every day.\n* False : Never, ocasionally and/or has been asbstinents for at least 7 days in a row."
+						},
+						{
+							"key": "hypertensive",
+							"value": "{{hypertensive}}",
+							"description": "On Hypertension Treatment? \n * True \n * False"
+						},
+						{
+							"key": "race",
+							"value": "{{race}}",
+							"description": "Race\n * White (white)\n *  African American (aa)"
+						}
+					]
+				},
+				"description": "The API CARDIOAPI is a risk calculator API intended to help users find an estimate for their cardiovascular risk according to the 2013 ACC/AHA Guideline on the Assessment of Cardiovascular Risk and the 2013 ACC/AHA Guideline on the Treatment of Blood Cholesterol to Reduce Atherosclerotic Cardiovascular Risk in Adults. \nThe 10-year risk ( compute_ten_year_score ) for ASCVD is categorized as: \n* Low-risk (<5%) \n* Borderline risk (5% to 7.4%) \n* Intermediate risk (7.5% to 19.9%) \n* High risk (≥20%)\n\nThe lifetime calculated ASCVD risk ( compute_lifetime_risk ) represents a quantitative estimation of absolute risk for a 50 year old man or woman with the same risk profile.\nThis estimation of risk is based on the grouping of risk factor levels into 5 strata.\n* All risk factors are optimal\n* ≥1 risk factors are not optimal\n* ≥1 risk factors are elevated\n* 1 major risk factor\n* ≥2 major risk factors\n\nOptimal ASCVD Risk ( compute_optimal_lifetime ): Predicted 10-year ASCVD risk for someone with the same age and race/ethnicity category who has an optimal risk factor profile (total cholesterol, 170 mg/dL; HDL-cholesterol, 60 mg/d; SBP, 110 mm Hg; nonsmoker; non-diabetic; and no blood pressure–lowering drugs).\n\nThe 10-year risk reduction ( compute_ten_year_risk_reduction ) for ASCVD"
+			},
+			"response": [
+				{
+					"name": "Validation exception.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ascvd?age=<integer>&gender=<string>&systolic=<integer>&total_cholesterol=<string>&hdl=<integer>&diabetic=<boolean>&smoker=<boolean>&hypertensive=<boolean>&race=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ascvd"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "<integer>"
+								},
+								{
+									"key": "gender",
+									"value": "<string>"
+								},
+								{
+									"key": "systolic",
+									"value": "<integer>"
+								},
+								{
+									"key": "total_cholesterol",
+									"value": "<string>"
+								},
+								{
+									"key": "hdl",
+									"value": "<integer>"
+								},
+								{
+									"key": "diabetic",
+									"value": "<boolean>"
+								},
+								{
+									"key": "smoker",
+									"value": "<boolean>"
+								},
+								{
+									"key": "hypertensive",
+									"value": "<boolean>"
+								},
+								{
+									"key": "race",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "No results for the given source.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ascvd?age=<integer>&gender=<string>&systolic=<integer>&total_cholesterol=<string>&hdl=<integer>&diabetic=<boolean>&smoker=<boolean>&hypertensive=<boolean>&race=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ascvd"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "<integer>"
+								},
+								{
+									"key": "gender",
+									"value": "<string>"
+								},
+								{
+									"key": "systolic",
+									"value": "<integer>"
+								},
+								{
+									"key": "total_cholesterol",
+									"value": "<string>"
+								},
+								{
+									"key": "hdl",
+									"value": "<integer>"
+								},
+								{
+									"key": "diabetic",
+									"value": "<boolean>"
+								},
+								{
+									"key": "smoker",
+									"value": "<boolean>"
+								},
+								{
+									"key": "hypertensive",
+									"value": "<boolean>"
+								},
+								{
+									"key": "race",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Successful operation.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer Bearer 0844bf6e-7b46-36cc-9144-2a628d6ff066",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://apigw.nubentos.com/t/nubentos.com/ascvd?age=58&gender=male&systolic=130&total_cholesterol=190&hdl=90&diabetic=True&smoker=Never&hypertensive=False&race=white",
+							"protocol": "https",
+							"host": [
+								"apigw",
+								"nubentos",
+								"com"
+							],
+							"path": [
+								"t",
+								"nubentos.com",
+								"ascvd"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "58",
+									"description": "(Required) Current Age, enter a value between 20-79 years"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"description": "(Required) Gender:\n * male.\n * female.\n"
+								},
+								{
+									"key": "systolic",
+									"value": "130",
+									"description": "(Required) Systolic Blood Pressure (mm Hg) : Value must be between 90-200"
+								},
+								{
+									"key": "total_cholesterol",
+									"value": "190",
+									"description": "(Required) Total Cholesterol (mmol/L) : Value must be between 130 - 320"
+								},
+								{
+									"key": "hdl",
+									"value": "90",
+									"description": "(Required) HDL Cholesterol (mmol/L) : Value must be between 20 - 100"
+								},
+								{
+									"key": "diabetic",
+									"value": "True",
+									"description": "History of Diabetes? : True | False"
+								},
+								{
+									"key": "smoker",
+									"value": "Never",
+									"description": "Smoker?\n * Current \n* Former \n* Never"
+								},
+								{
+									"key": "hypertensive",
+									"value": "False",
+									"description": "On Hypertension Treatment? \n * True \n * False"
+								},
+								{
+									"key": "race",
+									"value": "white",
+									"description": "Race\n * White (white)\n *  African American (aa)"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n  \"compute_lifetime_risk\": 36,\n  \"compute_optimal_lifetime\": 5,\n  \"compute_ten_year_risk_reduction\": 0,\n  \"compute_ten_year_score\": 0.9\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "75c2ec46-4fc4-47a4-a0bb-97484ebf497e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3746e9c1-9643-4d3c-a670-b190c30fb978",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "1de42672-e9e9-46a2-908f-407dd971720c",
+			"key": "baseUrl",
+			"value": "https://apigw.nubentos.com:443/t/nubentos.com/cardioapi/0.0.0",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

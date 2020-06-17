@@ -1,0 +1,18 @@
+{
+  "name": "cardioapi",
+  "version": "1.0.0",
+  "description": "Cardio_API_is_a_risk_calculator_API_intended_to_help_users_find_an_estimate_for_their_cardiovascular_risk_according_to_the_2013_ACCAHA_Guideline_on_the_Assessment_of_Cardiovascular_Risk_and_the_2013_ACCAHA_Guideline_on_the_Treatment_of_Blood_Cholesterol_to_Reduce_Atherosclerotic_Cardiovascular_Risk_in_Adults_",
+  "license": "Apache-2.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive"
+  },
+  "dependencies": {
+    "superagent": "5.2.2"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3",
+    "expect.js": "~0.3.1"
+  }
+}
