@@ -317,7 +317,7 @@
 		{
 			"id": "1de42672-e9e9-46a2-908f-407dd971720c",
 			"key": "baseUrl",
-			"value": "https://apigw.nubentos.com:443/t/nubentos.com/cardioapi/0.0.0",
+			"value": "https://gateway.nubentos.com:443/nubentos.com/cardioapi/0.0.0",
 			"type": "string"
 		}
 	],

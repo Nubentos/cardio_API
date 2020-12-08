@@ -11,8 +11,8 @@ info:
   license:
     name: "Apache 2.0"
     url: "https://www.apache.org/licenses/LICENSE-2.0.html"
-host: "apigw.nubentos.com"
-basePath: "/t/nubentos.com/cardioapi/0.0.0"
+host: "gateway.dev.nubentos.com"
+basePath: "/nubentos.com/cardioapi/0.0.0"
 schemes:
 - "https"
 paths:
@@ -92,9 +92,9 @@ paths:
           description: "Validation exception."
         404:
           description: "No results for the given source."
-      x-swagger-router-controller: "Default"
       x-auth-type: "Application & Application User"
       x-throttling-tier: "Unlimited"
+      x-swagger-router-controller: "Default"
 definitions:
   resultIrc:
     required:

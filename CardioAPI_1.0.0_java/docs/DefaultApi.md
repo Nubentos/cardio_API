@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *https://apigw.nubentos.com/t/nubentos.com/cardioapi/0.0.0*
+All URIs are relative to *https://gateway.dev.nubentos.com/nubentos.com/cardioapi/0.0.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

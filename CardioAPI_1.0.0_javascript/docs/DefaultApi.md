@@ -1,6 +1,6 @@
 # Cardioapi.DefaultApi
 
-All URIs are relative to *https://apigw.nubentos.com/t/nubentos.com/cardioapi/0.0.0*
+All URIs are relative to *https://gateway.dev.nubentos.com/nubentos.com/cardioapi/0.0.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,15 +19,15 @@ var Cardioapi = require('cardioapi');
 
 var apiInstance = new Cardioapi.DefaultApi();
 
-var age = 56; // Integer | Current Age, enter a value between 20-79 years
+var age = 56; // Number | Current Age, enter a value between 20-79 years
 
 var gender = "gender_example"; // String | Gender:  * male.  * female. 
 
-var systolic = 56; // Integer | Systolic Blood Pressure (mm Hg) : Value must be between 90-200
+var systolic = 56; // Number | Systolic Blood Pressure (mm Hg) : Value must be between 90-200
 
 var totalCholesterol = "totalCholesterol_example"; // String | Total Cholesterol (mmol/L) : Value must be between 130 - 320
 
-var hdl = 56; // Integer | HDL Cholesterol (mmol/L) : Value must be between 20 - 100
+var hdl = 56; // Number | HDL Cholesterol (mmol/L) : Value must be between 20 - 100
 
 var opts = { 
   'diabetic': true, // Boolean | History of Diabetes? : True | False
@@ -50,11 +50,11 @@ apiInstance.ascvdGet(age, gender, systolic, totalCholesterol, hdl, opts, callbac
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **age** | **Integer**| Current Age, enter a value between 20-79 years | 
+ **age** | **Number**| Current Age, enter a value between 20-79 years | 
  **gender** | **String**| Gender:  * male.  * female.  | 
- **systolic** | **Integer**| Systolic Blood Pressure (mm Hg) : Value must be between 90-200 | 
+ **systolic** | **Number**| Systolic Blood Pressure (mm Hg) : Value must be between 90-200 | 
  **totalCholesterol** | **String**| Total Cholesterol (mmol/L) : Value must be between 130 - 320 | 
- **hdl** | **Integer**| HDL Cholesterol (mmol/L) : Value must be between 20 - 100 | 
+ **hdl** | **Number**| HDL Cholesterol (mmol/L) : Value must be between 20 - 100 | 
  **diabetic** | **Boolean**| History of Diabetes? : True | False | [optional] 
  **smoker** | **Boolean**| Smoker?  * True: Smokes every day. * False: Never, ocasionally and/or has been asbstinents for at least 7 days in a row.  | [optional] 
  **hypertensive** | **Boolean**| On Hypertension Treatment?   * True   * False | [optional] 
