@@ -14,6 +14,9 @@ We covered in this repository the next list of resources.
 
 [:white_check_mark:] Mock server in Node.js language.
 
+## Quality 
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Nubentos_cardio_API&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Nubentos_cardio_API)
 
 ## Authors
 
